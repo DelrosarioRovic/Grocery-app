@@ -2,9 +2,10 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { TouchableOpacity, Image } from "react-native";
+import arrowLeft from "../assets/ep_arrow-left-bold.png";
 import Intro from "../screen/intro";
 import Login from "../screen/login";
-import arrowLeft from "../assets/ep_arrow-left-bold.png";
+import Home from "../screen/home";
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +32,12 @@ const Route = () => {
             headerShadowVisible: false,
           })}
         />
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{ headerShown: false }}
+        />
+
         {/* Add more screens as needed */}
       </Stack.Navigator>
     </NavigationContainer>

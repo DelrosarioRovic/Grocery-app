@@ -40,7 +40,7 @@ const Login = () => {
           <Text style={styles.numberInputLabel}>+44</Text>
           <Text style={styles.numberInputLabel}>|</Text>
           <TextInput
-                  ref={inputRef}
+            ref={inputRef}
             style={styles.numberInput}
             onChangeText={(num) => onChangeNumber(num)}
             value={inputNum}
