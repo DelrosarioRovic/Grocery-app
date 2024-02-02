@@ -5,7 +5,7 @@ import SliderCarousel from "../components/slider-carousel";
 import Categories from "../components/categories";
 import BestSelling from "../components/best-selling";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.topContainer}>
@@ -13,7 +13,7 @@ const Home = () => {
         <SearchHome />
         <SliderCarousel />
         <Categories />
-        <BestSelling />
+        <BestSelling navigation={navigation} />
       </View>
     </View>
   );

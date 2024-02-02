@@ -4,6 +4,8 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 
+import addBtnIcon from "../assets/addBtn.png";
+
 //checl
 const ItemSell = ({ itemImg, title, price, kilo }) => {
   return (
@@ -14,6 +16,7 @@ const ItemSell = ({ itemImg, title, price, kilo }) => {
         display: "flex",
         justifyContent: "center",
         flexDirection: "column",
+        position: "relative",
       }}
     >
       <Image source={itemImg} style={{ width: wp(30), height: hp(15) }} />
@@ -28,6 +31,10 @@ const ItemSell = ({ itemImg, title, price, kilo }) => {
           </Text>
         </View>
       </View>
+      <Image
+        source={addBtnIcon}
+        style={{ position: "absolute", bottom: -5, right: -5 }}
+      />
     </View>
   );
 };
