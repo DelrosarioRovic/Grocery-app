@@ -4,6 +4,7 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 
+//checl
 const ItemSell = ({ itemImg, title, price, kilo }) => {
   return (
     <View
