@@ -12,7 +12,7 @@ const Stack = createNativeStackNavigator();
 const Route = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Intro">
         <Stack.Screen
           name="Intro"
           component={Intro}

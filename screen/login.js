@@ -9,7 +9,10 @@ import {
 import carrotIntro from "../assets/carrot-intro.png";
 import { useState, useRef, useEffect } from "react";
 
-const Login = () => {
+const Login = ({ navigation }) => {
+  const handleNavigate = () => {
+    navigation.navigate("Home");
+  };
   const [inputNum, setInputNum] = useState("");
   const inputRef = useRef(null);
 
@@ -50,7 +53,7 @@ const Login = () => {
           />
         </View>
         <View style={styles.termAndServicesContainer}>
-          <TouchableOpacity style={styles.continueBtn}>
+          <TouchableOpacity style={styles.continueBtn} onPress={handleNavigate}>
             <Text style={styles.continueBtnText}>Continue</Text>
           </TouchableOpacity>
           <View style={styles.termAndServicesTextContainer}>
