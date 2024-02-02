@@ -9,19 +9,19 @@ import PromoSliderItem from "./promo";
 const sliderDataImg = [
   {
     image: require("../assets/sliderImage1.jpeg"),
-    title: "Orange Offer",
+    title: "Ramadan Offer",
     price: "25%",
     bgColor: "#FC6736",
   },
   {
     image: require("../assets/sliderImage2.jpeg"),
-    title: "Tomato Offer",
+    title: "Ramadan Offer",
     price: "35%",
-    bgColor: "#FDE767",
+    bgColor: "#009959",
   },
   {
     image: require("../assets/sliderImage3.jpeg"),
-    title: "Strawberry Offer",
+    title: "Ramadan Offer",
     price: "29%",
     bgColor: "#D24545",
   },
@@ -39,7 +39,7 @@ const SliderCarousel = () => {
       firstItem={1}
       autoplayInterval={4000}
       sliderWidth={wp(100)}
-      itemWidth={wp(86) - 65}
+      itemWidth={wp(95) - 70}
       slideStyle={{
         display: "flex",
         alignItems: "center",
@@ -52,16 +52,21 @@ export default SliderCarousel;
 
 const ItemCard = ({ item, index }, ParallaxProps) => {
   return (
-    <View style={{ position: "relative", overflow: "hidden" }}>
+    <View
+      style={{ position: "relative", overflow: "hidden", borderRadius: 30 }}
+    >
       <Image
         source={item.image}
         style={{
-          borderRadius: 30,
-          width: wp(86) - 65,
+          width: wp(97) - 70,
           height: hp(25),
         }}
       />
-      <PromoSliderItem title={item.title} price={item.price} bgColor={item.bgColor} />
+      <PromoSliderItem
+        title={item.title}
+        price={item.price}
+        bgColor={item.bgColor}
+      />
     </View>
   );
 };

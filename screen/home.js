@@ -2,6 +2,8 @@ import { View, StyleSheet } from "react-native";
 import ProfileHome from "../components/profile-home";
 import SearchHome from "../components/search-home";
 import SliderCarousel from "../components/slider-carousel";
+import Categories from "../components/categories";
+import BestSelling from "../components/best-selling";
 
 const Home = () => {
   return (
@@ -10,6 +12,8 @@ const Home = () => {
         <ProfileHome />
         <SearchHome />
         <SliderCarousel />
+        <Categories />
+        <BestSelling />
       </View>
     </View>
   );
