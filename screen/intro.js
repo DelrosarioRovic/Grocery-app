@@ -112,9 +112,9 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   textTitle: {
+    fontFamily: "poppins-bold",
     fontSize: 28,
     textAlign: "center",
-    fontWeight: "bold",
   },
   textDescription: {
     textAlign: "center",
