@@ -4,12 +4,15 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 
+
 import addBtnIcon from "../assets/addBtn.png";
 
 const ItemSell = ({ itemImg, title, price, kilo, id, navigation }) => {
   const handleSendData = () => {
     navigation.navigate("Specific-product", { dynamicData: id });
   };
+
+
 
   return (
     <TouchableOpacity onPress={handleSendData}>
