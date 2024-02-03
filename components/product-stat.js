@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, Image, StyleSheet } from "react-native";
 
 import organicIcon from "../assets/organic-icon.png";
 import fireIcon from "../assets/fire.png";
@@ -37,11 +37,6 @@ const ProductStat = ({ organicPercentage, expirationDate, rating, grm }) => {
           <Text style={styles.statsTextLabel}>100 GRM</Text>
         </View>
       </View>
-      <View style={styles.addToCartBtnContainer}>
-        <TouchableOpacity style={styles.addToCartBtn}>
-          <Text style={styles.textAddToCart}>Add to cart</Text>
-        </TouchableOpacity>
-      </View>
     </View>
   );
 };
@@ -75,22 +70,5 @@ const styles = StyleSheet.create({
   icon: {
     width: 47,
     height: 47,
-  },
-  addToCartBtnContainer: {
-    width: "100%",
-    display: "flex",
-    alignItems: "center",
-  },
-  addToCartBtn: {
-    backgroundColor: "#009959",
-    width: "90%",
-    paddingVertical: 10,
-    borderRadius: 50,
-  },
-  textAddToCart: {
-    textAlign: "center",
-    color: "#ffffff",
-    fontSize: 20,
-    fontWeight: "600",
   },
 });
