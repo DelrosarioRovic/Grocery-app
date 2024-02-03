@@ -2,7 +2,7 @@ import { View, Text, ScrollView } from "react-native";
 import ItemSell from "../components/item-sell";
 import { DataProduct } from "../api/data";
 
-const AllProducts = () => {
+const AllProducts = ({ navigation }) => {
   return (
     <ScrollView>
       <View
@@ -17,10 +17,12 @@ const AllProducts = () => {
         {DataProduct.map((product, index) => (
           <View key={index} style={{ paddingHorizontal: 10 }}>
             <ItemSell
+              id={product.id}
               itemImg={product.img}
               kilo={product.kilo}
               price={product.price}
               title={product.title}
+              navigation={navigation}
             />
           </View>
         ))}

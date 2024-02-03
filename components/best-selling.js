@@ -20,12 +20,16 @@ const BestSelling = ({ navigation }) => {
           price={DataProduct[0].price}
           title={DataProduct[0].title}
           kilo={DataProduct[0].kilo}
+          id={DataProduct[0].id}
+          navigation={navigation}
         />
         <ItemSell
           itemImg={DataProduct[1].img}
           price={DataProduct[1].price}
           title={DataProduct[1].title}
           kilo={DataProduct[1].kilo}
+          id={DataProduct[1].id}
+          navigation={navigation}
         />
       </View>
     </View>
