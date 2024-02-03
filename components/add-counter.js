@@ -10,7 +10,7 @@ import plusBtn from "../assets/addBtnCart.png";
 import minusBtn from "../assets/minusBtn.png";
 
 const AddCounter = () => {
-  const [counter, setCounter] = useState("0");
+  const [counter, setCounter] = useState("1");
 
   const handleIncrement = () => {
     let numAdd = String(parseInt(counter) + 1);
@@ -18,8 +18,8 @@ const AddCounter = () => {
   };
 
   const handleDecrement = () => {
-    let addMinus = String(parseInt(counter) - 1);
-    setCounter(addMinus);
+    let addMinus = parseInt(counter) - 1;
+    setCounter(addMinus <= 0 ? "1" : String(addMinus));
   };
 
   return (
