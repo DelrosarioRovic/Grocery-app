@@ -7,6 +7,13 @@ import {
 
 import { DataProduct } from "../api/data";
 import AddCounter from "../components/add-counter";
+import ProductStat from "../components/product-stat";
+
+//icons
+import organicIcon from "../assets/organic-icon.png";
+import fireIcon from "../assets/fire.png";
+import notoStartIcon from "../assets/noto_star.png";
+import yearIcon from "../assets/1year.png";
 
 //dynamic screen
 const SpecificProduct = ({ route }) => {
@@ -30,10 +37,34 @@ const SpecificProduct = ({ route }) => {
     <View style={styles.container}>
       <View style={styles.semiContainer}>
         <Image source={specificProduct.img} style={styles.imageProduct} />
-        <View style={styles.headerContainer}>
-          <Text>{specificProduct.title}</Text>
-          <AddCounter />
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            rowGap: 10,
+            width: "100%",
+          }}
+        >
+          <View style={styles.headerContainer}>
+            <View style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              <Text style={styles.textTitle}>{specificProduct.title}</Text>
+              <Text style={styles.textKiloPrice}>
+                {specificProduct.kilo}kg, {specificProduct.price}$
+              </Text>
+            </View>
+
+            <AddCounter />
+          </View>
+          <Text style={{ paddingHorizontal: 5, color: "#ADAAAA" }}>
+            {specificProduct.description}
+          </Text>
         </View>
+        <ProductStat
+          organicPercentage={specificProduct.organicPercentage}
+          expirationDate={specificProduct.expirationDate}
+          rating={specificProduct.rating}
+          grm={specificProduct.grm}
+        />
       </View>
     </View>
   );
@@ -44,15 +75,15 @@ export default SpecificProduct;
 const styles = StyleSheet.create({
   container: {
     width: wp(100),
-    display: "flex",
-    alignItems: "center",
     paddingVertical: 20,
   },
   semiContainer: {
     display: "flex",
     flexDirection: "column",
-    gap: 20,
-    justifyContent: "space-between",
+    rowGap: 50,
+    alignItems: "center",
+    width: wp(100),
+    paddingHorizontal: 20,
   },
   imageProduct: {
     width: wp(75),
@@ -61,7 +92,17 @@ const styles = StyleSheet.create({
   headerContainer: {
     display: "flex",
     flexDirection: "row",
-    alignItems: "center",
+    alignItems: "flex-start",
     justifyContent: "space-between",
+    width: "100%",
+  },
+  textTitle: {
+    fontSize: 28,
+    fontWeight: "600",
+  },
+  textKiloPrice: {
+    fontSize: 24,
+    fontWeight: "500",
+    color: "#D80032",
   },
 });
