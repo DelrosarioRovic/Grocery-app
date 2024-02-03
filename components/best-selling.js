@@ -2,12 +2,15 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import ItemSell from "./item-sell";
 import { DataProduct } from "../api/data";
 
-const BestSelling = () => {
+const BestSelling = ({ navigation }) => {
+  const handleNavigate = () => {
+    navigation.navigate("all-products");
+  };
   return (
     <View style={{ display: "flex", flexDirection: "column" }}>
       <View style={styles.container}>
         <Text style={{ fontWeight: "700", fontSize: 20 }}>Best selling 🔥</Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={handleNavigate}>
           <Text style={styles.btnText}>See all</Text>
         </TouchableOpacity>
       </View>
@@ -17,12 +20,16 @@ const BestSelling = () => {
           price={DataProduct[0].price}
           title={DataProduct[0].title}
           kilo={DataProduct[0].kilo}
+          id={DataProduct[0].id}
+          navigation={navigation}
         />
         <ItemSell
           itemImg={DataProduct[1].img}
           price={DataProduct[1].price}
           title={DataProduct[1].title}
           kilo={DataProduct[1].kilo}
+          id={DataProduct[1].id}
+          navigation={navigation}
         />
       </View>
     </View>

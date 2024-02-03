@@ -18,7 +18,7 @@ const Categories = () => {
           justifyContent: "space-between",
         }}
       >
-        {DataProduct.map((product, index) => (
+        {DataProduct.slice(0, 4).map((product, index) => (
           <Image
             key={index}
             source={product.img}
