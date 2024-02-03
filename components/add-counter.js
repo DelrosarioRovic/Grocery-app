@@ -5,38 +5,31 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
-import { useState } from "react";
 import plusBtn from "../assets/addBtnCart.png";
 import minusBtn from "../assets/minusBtn.png";
 
-const AddCounter = () => {
-  const [counter, setCounter] = useState("0");
-
-  const handleIncrement = () => {
-    let numAdd = String(parseInt(counter) + 1);
-    setCounter(numAdd);
-  };
-
-  const handleDecrement = () => {
-    let addMinus = String(parseInt(counter) - 1);
-    setCounter(addMinus);
-  };
-
+const AddCounter = ({
+  imgSize,
+  counter,
+  handleIncrement,
+  handleDecrement,
+  handleInputCounter,
+}) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={handleDecrement}>
-        <Image source={minusBtn} />
+        <Image source={minusBtn} style={imgSize} />
       </TouchableOpacity>
 
       <TextInput
         style={styles.textCounter}
         keyboardType="numeric"
         value={counter}
-        onChange={(e) => setCounter(e.target.value)}
+        onChange={handleInputCounter}
       />
 
       <TouchableOpacity onPress={handleIncrement}>
-        <Image source={plusBtn} />
+        <Image source={plusBtn} style={imgSize} />
       </TouchableOpacity>
     </View>
   );
@@ -52,7 +45,7 @@ const styles = StyleSheet.create({
     gap: 20,
   },
   textCounter: {
-    fontSize: 34,
+    fontSize: 25,
     fontWeight: "700",
   },
 });

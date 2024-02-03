@@ -15,6 +15,7 @@ import Login from "../screen/login";
 import Home from "../screen/home";
 import AllProducts from "../screen/all-products";
 import SpecificProduct from "../screen/specific-product";
+import CartScreen from "../screen/cart";
 
 const Stack = createNativeStackNavigator();
 
@@ -110,6 +111,20 @@ const Route = () => {
                   <Image source={searchIcon} alt="search" />
                 </View>
               </View>
+            ),
+
+            headerShadowVisible: false,
+          })}
+        />
+        <Stack.Screen
+          name="Cart"
+          component={CartScreen}
+          options={({ navigation }) => ({
+            title: "Cart",
+            headerLeft: () => (
+              <TouchableOpacity onPress={() => navigation.goBack()}>
+                <Image source={arrowLeft} style={{ width: 30, height: 30 }} />
+              </TouchableOpacity>
             ),
 
             headerShadowVisible: false,

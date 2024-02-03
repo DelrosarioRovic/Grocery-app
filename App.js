@@ -5,6 +5,9 @@ import poppinsBold from "./assets/fonts/Poppins-Bold.otf";
 import poppinsLight from "./assets/fonts/Poppins-Light.otf";
 import poppinsRegular from "./assets/fonts/Poppins-Regular.otf";
 import poppinsSemiBold from "./assets/fonts/Poppins-SemiBold.otf";
+//redux
+import { Provider } from "react-redux";
+import { makeStore } from "./redux/store";
 
 //import for new font
 import { useCallback } from "react";
@@ -33,9 +36,12 @@ export default function App() {
     return null;
   }
 
+  const store = makeStore();
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
-      <Route />
+      <Provider store={store}>
+        <Route />
+      </Provider>
     </View>
   );
 }
